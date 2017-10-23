@@ -5,5 +5,7 @@ class CreateCategories < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    Category.fill_in_table
   end
 end

@@ -6,8 +6,6 @@ class CreateStructures < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    Structure.create(name: 'MLP')
-    Structure.create(name: 'REIT')
-    Structure.create(name: 'Corp.')
+    Structure.fill_in_table
   end
 end

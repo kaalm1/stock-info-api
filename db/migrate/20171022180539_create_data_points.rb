@@ -5,5 +5,7 @@ class CreateDataPoints < ActiveRecord::Migration[5.1]
       t.string :ysymbol
       t.timestamps
     end
+
+    DataPoint.fill_in_table
   end
 end
