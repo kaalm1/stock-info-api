@@ -11,5 +11,6 @@ class CreateStocks < ActiveRecord::Migration[5.1]
     end
 
     Stock.fill_in_table
+    Chart.create_favorites
   end
 end
