@@ -11,10 +11,7 @@ class Chart < ApplicationRecord
     stocks = self.stocks.pluck(:ticker).join('+')
     data_points = self.data_points.pluck(:ysymbol).join('')
     url = "http://finance.yahoo.com/d/quotes.csv?s=#{stocks}&f=#{data_points}"
-    data = CSV.parse(RestClient.get(url), {headers: true})
-    data.each do |stock|
-      byebug
-    end
+    CSV.parse(RestClient.get(url), {headers: true}).to_json
   end
 
   def self.create_favorites
